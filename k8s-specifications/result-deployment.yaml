@@ -15,8 +15,9 @@ spec:
         app: result
     spec:
       containers:
-      - image: sandeepbikkana87/examplevotingapp_result
+      - image: ${{ secrets.DOCKERHUB_USERNAME }}/result:${{ env.IMAGE_TAG }}
         name: result
         ports:
         - containerPort: 80
           name: result
+
