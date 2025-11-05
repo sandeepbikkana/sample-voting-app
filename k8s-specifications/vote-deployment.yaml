@@ -15,8 +15,9 @@ spec:
         app: vote
     spec:
       containers:
-      - image: sandeepbikkana87/examplevotingapp_vote
+      - image: ${{ secrets.DOCKERHUB_USERNAME }}/vote:${{ env.IMAGE_TAG }}
         name: vote
         ports:
         - containerPort: 80
           name: vote
+
