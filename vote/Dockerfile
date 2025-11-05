@@ -1,4 +1,4 @@
-# base defines a base stage that uses the official python runtime base image.
+# base defines a base stage that uses the official python runtime base image
 FROM python:3.11-slim AS base
 
 # Add curl for healthcheck
@@ -30,5 +30,6 @@ EXPOSE 80
 
 # Define our command to be run when launching the container.
 CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
+
 
 
