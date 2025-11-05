@@ -15,5 +15,6 @@ spec:
         app: worker
     spec:
       containers:
-      - image: sandeepbikkana87/examplevotingapp_worker
+      - image: ${{ secrets.DOCKERHUB_USERNAME }}/worker:${{ env.IMAGE_TAG }}
         name: worker
+
